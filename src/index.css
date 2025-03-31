@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
-
-/* I need to use below styles to prevent unwanted scrolling on mobile view */
+/* Simple fixes for mobile scrolling issues */
 html,
 body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+    /* Prevents pull-to-refresh */
 }
 
+/* Wrapper class - apply to container elements if needed */
 .wrapper {
     min-height: 100%;
+    height: 100vh;
 }
 
+/* For iOS devices to prevent elastic scrolling */
+@supports (-webkit-touch-callout: none) {
+    body {
+        /* Fix for iOS height issues */
+        height: -webkit-fill-available;
+    }
+}

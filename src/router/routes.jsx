@@ -1,18 +1,20 @@
-//src/router/appRoutes.jsx
-
-import { Navigate } from "react-router-dom";
+//src/router/routes.jsx
 import RootLayout from "@components/layout/RootLayout";
-// import Customers from "@pages/Customers";
-// import Sales from "@pages/Sales";
-// import NotFound from "@pages/NotFound";
-// import ErrorPage from "@pages/ErrorPage";
+import TestPage from "@pages/TestPage";
 
-const PlaceholderPage = () => (
-  <div className="p-6">
-    <h1 className="text-2xl font-semibold text-gray-800">Coming Soon</h1>
-    <p className="mt-2 text-gray-600">
-      This feature is currently under development.
+// Simple homepage message
+const HomePage = () => (
+  <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md">
+    <h1 className="text-2xl font-bold mb-4">Component Testing App</h1>
+    <p className="mb-4">
+      This app is for testing React components on different devices.
     </p>
+    <a
+      href="/test"
+      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+    >
+      View Test Components
+    </a>
   </div>
 );
 
@@ -20,43 +22,11 @@ const routes = [
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <PlaceholderPage />, // ✅ Handles crashes, API failures, etc. error handling at the root level
     children: [
-      { index: true, element: <PlaceholderPage /> },
-      { path: "sales", element: <PlaceholderPage /> },
-      { path: "products", element: <PlaceholderPage /> },
-      // { path: "/products/:id", element: <Product /> }, // for dynamic routing
-      { path: "users", element: <PlaceholderPage /> },
-      { path: "orders", element: <PlaceholderPage /> },
-      { path: "analytics", element: <PlaceholderPage /> },
-      { path: "settings", element: <PlaceholderPage /> },
-      { path: "inventory", element: <PlaceholderPage /> },
-      { path: "transactions", element: <PlaceholderPage /> },
-      { path: "dashboard", element: <Navigate to="/" replace /> }, // Redirect
-      { path: "*", element: <PlaceholderPage /> }, // ✅ Handles 404 errors
+      { index: true, element: <HomePage /> },
+      { path: "test", element: <TestPage /> },
     ],
   },
 ];
 
-
-
-
 export default routes;
-
-// How to access dynamic parameters inside your component, Look example below.
-
-// import { useParams } from "react-router-dom";
-// function Product() {
-// }
-// const { id } = useParams(); // Access the dynamic route parameter 'id'
-// return <h1>Product ID: {id}</h1>;
-// export default Product;
-
-// How to access dynamic parameters inside your component, Look example below.
-
-// import { useParams } from "react-router-dom";
-// function Product() {
-// }
-// const { id } = useParams(); // Access the dynamic route parameter 'id'
-// return <h1>Product ID: {id}</h1>;
-// export default Product;
