@@ -9,12 +9,14 @@ body {
     overscroll-behavior: none;
     /* Prevents pull-to-refresh */
     -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    touch-action: none;
 }
 
 /* Wrapper class - apply to container elements if needed */
 .wrapper {
     min-height: 100%;
-    
+
 }
 
 /* For iOS devices to prevent elastic scrolling */
