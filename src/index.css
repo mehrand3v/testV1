@@ -1,2 +1,13 @@
 @import "tailwindcss";
 
+
+/* I need to use below styles to prevent unwanted scrolling on mobile view */
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
