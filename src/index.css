@@ -19,6 +19,11 @@ body {
 
 }
 
+/* Optional: Add this class with JavaScript when content overflows */
+.app-content.auto-scale {
+    transform: scale(var(--scale-factor, 0.9));
+}
+
 /* For iOS devices to prevent elastic scrolling */
 @supports (-webkit-touch-callout: none) {
     body {
