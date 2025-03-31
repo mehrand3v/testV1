@@ -8,12 +8,13 @@ body {
     padding: 0;
     overscroll-behavior: none;
     /* Prevents pull-to-refresh */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Wrapper class - apply to container elements if needed */
 .wrapper {
     min-height: 100%;
-    height: 100vh;
+    
 }
 
 /* For iOS devices to prevent elastic scrolling */
